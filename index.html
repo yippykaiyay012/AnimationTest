@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+    * {
+        transition: 1s;
+        user-select: none;
+        /* supported by Chrome and Opera */
+        -webkit-user-select: none;
+        /* Safari */
+        -khtml-user-select: none;
+        /* Konqueror HTML */
+        -moz-user-select: none;
+        /* Firefox */
+        -ms-user-select: none;
+        /* Internet Explorer/Edge */
+    }
+
+
+    html {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #5E366E;
+        color: #fff;
+        text-align: center;
+        font-family: 'Karla', sans-serif;
+    }
+
+    h1 {
+        margin-bottom: 10%;
+        font-size: 5rem;
+        letter-spacing: 10px;
+    }
+
+    #Ring1 {
+        animation: rotate 3.5s infinite linear;
+        transform-origin: 50% 50%;
+    }
+
+    #Ring2 {
+        animation: rotate 3.1s infinite reverse linear;
+        transform-origin: 50% 50%;
+        animation-delay: 600ms;
+    }
+
+    #Ring3 {
+        animation: rotate 2.8s infinite linear;
+        transform-origin: 50% 50%;
+        animation-delay: 100ms;
+    }
+
+    #Ring4 {
+        animation: rotate 2.4s infinite reverse linear;
+        transform-origin: 50% 50%;
+        animation-delay: 100ms;
+    }
+
+    @keyframes rotate {
+        100% {
+            transform: rotate(365deg);
+        }
+    }
+
+    .reveal {
+        animation: reveal 1s ease;
+        animation-fill-mode: both;
+    }
+
+    @keyframes reveal {
+        0% {
+            opacity: 0;
+            transform: translate(0px, 50px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: none;
+        }
+    }
+</style>
+<body>
+
+
+
+    <h1 class="reveal heading disable-select">Yolo Animations</h1>
+
+    <svg class="reveal" style="animation-delay: 1s;" width="500" height="500" viewBox="0 0 500 500" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <g id="Rings">
+            <path class="ring" id="Ring1"
+                d="M500 250C500 309.526 478.76 367.098 440.101 412.362C401.443 457.626 347.902 487.61 289.109 496.922C230.316 506.234 170.129 494.262 119.375 463.16C68.6213 432.058 30.6304 383.867 12.2359 327.254C-6.15861 270.642 -3.74941 209.324 19.0301 154.329C41.8096 99.3345 83.4645 54.2725 136.502 27.2484C189.54 0.224234 250.48 -6.9885 308.361 6.90752C366.242 20.8035 417.266 54.8963 452.254 103.054L432.029 117.748C400.539 74.4067 354.618 43.7232 302.525 31.2168C250.432 18.7104 195.586 25.2018 147.852 49.5235C100.118 73.8453 62.6287 114.401 42.1271 163.896C21.6255 213.391 19.4573 268.578 36.0123 319.529C52.5673 370.48 86.7592 413.852 132.438 441.844C178.116 469.836 232.284 480.611 285.198 472.23C338.111 463.849 386.298 436.863 421.091 396.126C455.884 355.388 475 303.573 475 250H500Z"
+                fill="#FF2277" />
+            <path class="ring" id="Ring2"
+                d="M450 250C450 297.621 433.008 343.679 402.081 379.89C371.154 416.101 328.321 440.088 281.287 447.538C234.253 454.987 186.104 445.41 145.5 420.528C104.897 395.646 74.5043 357.093 59.7887 311.803C45.0731 266.514 47.0005 217.459 65.2241 173.463C83.4477 129.468 116.772 93.418 159.202 71.7987C201.632 50.1794 250.384 44.4092 296.689 55.526C342.994 66.6428 383.813 93.917 411.803 132.443L395.623 144.199C370.431 109.525 333.695 84.9785 292.02 74.9734C250.346 64.9683 206.469 70.1614 168.282 89.6188C130.094 109.076 100.103 141.521 83.7017 181.117C67.3004 220.713 65.5658 264.862 78.8098 305.623C92.0539 346.384 119.407 381.082 155.95 403.475C192.493 425.869 235.827 434.488 278.158 427.784C320.489 421.079 359.039 399.491 386.873 366.901C414.707 334.311 430 292.859 430 250L450 250Z"
+                fill="#6655CC" />
+            <path class="ring" id="Ring3"
+                d="M400 250C400 285.715 387.256 320.259 364.061 347.417C340.866 374.575 308.741 392.566 273.465 398.153C238.189 403.74 202.078 396.557 171.625 377.896C141.173 359.235 118.378 330.32 107.342 296.353C96.3048 262.385 97.7504 225.594 111.418 192.597C125.086 159.601 150.079 132.564 181.901 116.349C213.724 100.135 250.288 95.8069 285.017 104.145C319.745 112.482 350.36 132.938 371.353 161.832L359.217 170.649C340.324 144.644 312.771 126.234 281.515 118.73C250.259 111.226 217.352 115.121 188.711 129.714C160.071 144.307 137.577 168.641 125.276 198.338C112.975 228.035 111.674 261.147 121.607 291.717C131.54 322.288 152.055 348.311 179.463 365.106C206.87 381.902 239.37 388.366 271.119 383.338C302.867 378.31 331.779 362.118 352.655 337.675C373.531 313.233 385 282.144 385 250H400Z"
+                fill="#F27A7A" />
+            <path class="ring" id="Ring4"
+                d="M350 250C350 273.81 341.504 296.839 326.041 314.945C310.577 333.05 289.161 345.044 265.643 348.769C242.126 352.494 218.052 347.705 197.75 335.264C177.449 322.823 162.252 303.547 154.894 280.902C147.537 258.257 148.5 233.73 157.612 211.732C166.724 189.734 183.386 171.709 204.601 160.899C225.816 150.09 250.192 147.205 273.345 152.763C296.497 158.321 316.906 171.959 330.902 191.221L322.812 197.099C310.216 179.763 291.847 167.489 271.01 162.487C250.173 157.484 228.234 160.081 209.141 169.809C190.047 179.538 175.051 195.76 166.851 215.558C158.65 235.357 157.783 257.431 164.405 277.812C171.027 298.192 184.704 315.541 202.975 326.738C221.247 337.934 242.914 342.244 264.079 338.892C285.245 335.54 304.519 324.745 318.437 308.45C332.354 292.155 340 271.429 340 250H350Z"
+                fill="#FC6AFF" />
+        </g>
+    </svg>
+
+
+
+    <script>
+        const text = document.querySelector('.heading');
+        const backgroundhtml = document.querySelector('html');
+
+        const rings = document.querySelectorAll('.ring');
+
+        let colours = ['#FF2277', '#6655CC', '#F27A7A', '#FC6AFF'];
+
+        text.addEventListener('click', function () {
+            text.style.color = colours[Math.floor(Math.random() * colours.length)];
+        });
+
+        rings.forEach(element => {
+            element.addEventListener('click', function () {
+                element.style.fill = colours[Math.floor(Math.random() * colours.length)];
+            });
+        });
+
+        document.querySelector('html').addEventListener('click', function() {
+            this.style.backgroundColor = colours[Math.floor(Math.random() * colours.length)];
+        });
+
+
+        document.addEventListener('mousemove', event => {
+             // gets the total height of the page content
+            var page_height = document.body.offsetHeight ? document.body.offsetHeight : document.height;
+
+            // gets the total width of the page content
+            var page_width = document.body.offsetWidth ? document.body.offsetWidth : document.width;
+
+             const posX = event.clientX;
+             const posY = event.clientY;
+
+             const x = parseInt(posX / page_height, 10);
+            
+
+             backgroundhtml.style.backgroundColor = "rgb("+ posX/10 + "," + posY/5 + "," + posX/10 + ")";
+             console.log(page_width + "    " + page_height   + "     "    +    posX + "  " + posY);
+        });
+
+
+    </script>
+</body>
+
+</html>
